@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slider</title>
+        <style>
+            .x {
+                height: 800px;
+                width: 100%;
+                animation: imganime 2s infinite;
+            }
+            @keyframes imganime {
+                /* from {
+                    transform: scale(0);
+                }
+                to {
+                    transform: scale(1.2);
+                } */
+
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(1%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img
+            src="https://s1.cdn.autoevolution.com/images/models/MERCEDES-BENZ_SLS-AMG-Black-Series-2013_main.jpg"
+            alt=""
+            width="100%"
+            height="600px"
+            class="x"
+        />
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsu-aaEgh-Wcwe29wEBEjy50wXVTFkhsf5io-5ZB0u9pcPE5W-scKaRnhBndbt3xndu4&usqp=CAU"
+            alt=""
+            width="100%"
+            height="600px"
+            class="x"
+        />
+        <img
+            src="https://www.gtspiritmedia.com/gtspirit/uploads/2012/02/official_mercedes_benz_sls_amg_silver_wing_wheelsandmore.jpg"
+            alt=""
+            width="100%"
+            height="600px"
+            class="x"
+        />
+        <img
+            src="https://img.favpng.com/22/22/12/mercedes-benz-slr-mclaren-mercedes-benz-sls-amg-car-mercedes-amg-gt-png-favpng-PMsnkiPcbx2dfuCy3k7bge43s.jpg"
+            alt=""
+            width="100%"
+            height="600px"
+            class="x"
+        />
+        <script>
+            index = 0;
+            function sliderImg() {
+                let img1 = document.getElementsByClassName("x");
+                console.log(img1);
+                for (i = 0; i < img1.length; i++) {
+                    // console.log(img1[i]);
+                    img1[i].style.display = "none";
+                }
+                img1[index].style.display = "block";
+                index++;
+                if (index >= img1.length) {
+                    index = 0;
+                }
+                setTimeout("sliderImg()", 1800);
+            }
+            sliderImg();
+        </script>
+    </body>
+</html>

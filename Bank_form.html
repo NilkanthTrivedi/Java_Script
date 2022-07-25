@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .x {
+                color: red;
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header"><h1>Individual Registration</h1></div>
+            <div class="content">
+                <form action="">
+                    <h4>User Particulars</h4>
+                    <label for="login"><span>*</span> Login Id</label>
+                    <input
+                        type="text"
+                        name="ipp"
+                        id="login"
+                        onblur="chkMe(this, 'err1')"
+                        onclick="highLite(this,'login')"
+                    /><span id="err1"></span><span id="val1"></span>
+                    <br />
+                    <br />
+                    <label for="pwd"><span>*</span> Password</label>
+                    <input
+                        type="text"
+                        name="ipp"
+                        id="pwd"
+                        onblur="chkMe(this, 'err2')"
+                        onclick="highLite(this,'pwd')"
+                    /><span id="err2"></span><span id="val2"></span>
+                    <br />
+                    <br />
+                    <label for="cpwd"><span>*</span>Confirm Password</label>
+                    <input
+                        type="text"
+                        name="ipp"
+                        id="cpwd"
+                        onblur="chkMe(this, 'err3')"
+                        onclick="highLite(this,'cpwd')"
+                    /><span id="err3"></span><span id="val3"></span>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function chkMe(ip, rqmsg) {
+                if (ip.value == "") {
+                    let e1 = document.getElementById(rqmsg);
+                    e1.innerHTML = "   * Required";
+                    e1.classList.add("x");
+                }
+            }
+            function highLite(ip, emp) {
+                let b1 = document.getElementById(emp);
+                if (ip.value == "") {
+                    b1.style.border = "2px solid red";
+                    // b1.classList.add("x");
+                }
+            }
+        </script>
+    </body>
+</html>

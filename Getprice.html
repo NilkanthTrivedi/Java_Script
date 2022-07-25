@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="" id="price" value="1500" />
+
+        <select name="" id="qty" onchange="totalPrice()">
+            <option value="">Select Qty</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        <p id="total"></p>
+
+        <script>
+            function totalPrice() {
+                let p = document.getElementById("price").value;
+                let q = document.getElementById("qty").value;
+                let t = document.getElementById("total");
+                t.innerHTML = p * q;
+                console.log(p * q);
+            }
+        </script>
+    </body>
+</html>

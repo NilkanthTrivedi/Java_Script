@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2ed try Successful</title>
+    </head>
+    <body>
+        <div class="new">
+            Name: <input type="text" name="" id="nm" onblur="ipnm()" /><span
+                id="nmerr"
+            ></span
+            ><br />
+            <br />
+            Mail-Id:
+            <input type="text" name="" id="mail" onblur="ipnm()" /><span
+                id="mailerr"
+            ></span
+            ><br />
+            <br />
+            Mobile:
+            <input
+                type="text"
+                name=""
+                id="mbl"
+                maxlength="10"
+                onblur="ipnm()"
+            /><span id="mblerr"></span><br />
+            <br />
+            Password:
+            <input type="text" name="" id="pwd" onblur="ipnm()" /><span
+                id="pwderr"
+            ></span
+            ><br />
+            <br />
+            Confirm Password:
+            <input type="text" name="" id="cpwd" onblur="ipnm()" /><span
+                id="cpwderr"
+            ></span>
+            <br />
+            <br />
+
+            <button type="submit">Submit</button>
+        </div>
+
+        <script>
+            function ipnm() {
+                // for NAME
+
+                let a = document.getElementById("nm").value;
+                console.log(a);
+                let b = document.getElementById("nmerr");
+                let reg_a1 = /^[a-zA-Z]+$/;
+                if (a == "") {
+                    b.innerHTML = "* Enter Name";
+                    b.style.color = "red";
+                    b.style.fontWeight = "600";
+                    return false;
+                } else if (!reg_a1.test(a)) {
+                    b.innerHTML = "* Alphabets Only";
+                    b.style.color = "red";
+                    return false;
+                } else {
+                    b.innerHTML = " Valid Name";
+                    b.style.color = "green";
+                    // return false;
+                }
+
+                // For MAIL-ID
+
+                let c = document.getElementById("mail").value;
+                let d = document.getElementById("mailerr");
+                console.log(c);
+                let reg_c1 = /^[a-zA-Z0-9.]+@[a-zA-Z.]+$/;
+                if (c == "") {
+                    d.innerHTML = "* Enter Mail-id";
+                    d.style.color = "red";
+                    d.style.fontWeight = "600";
+                    return false;
+                } else if (!reg_c1.test(c)) {
+                    d.innerHTML = "* Not Valid Id";
+                    d.style.color = "red";
+                    return false;
+                } else {
+                    d.innerHTML = " Valid Id";
+                    d.style.color = "green";
+                    // return false;
+                }
+
+                // For MOBILE NUMBER
+
+                let e = document.getElementById("mbl").value;
+                console.log(e);
+                let f = document.getElementById("mblerr");
+
+                let reg_e1 = /^[0-9]+$/;
+                if (e == "") {
+                    f.innerHTML = "* Enter Mobile No";
+                    f.style.color = "red";
+                    f.style.fontWeight = "600";
+                    return false;
+                } else if (!reg_e1.test(e)) {
+                    f.innerHTML = "* Not Valid Number";
+                    f.style.color = "red";
+                    return false;
+                } else {
+                    f.innerHTML = " Valid Number";
+                    f.style.color = "green";
+                    // return false;
+                }
+
+                // FOR PASSWORD
+
+                let p = document.getElementById("pwd").value;
+                console.log(p);
+                let q = document.getElementById("pwderr");
+
+                let reg_p1 = /^[a-zA-Z0-9@#$]+[0-9]+$/;
+                if (p == "") {
+                    q.innerHTML = " * Password Required";
+                    q.style.color = "red";
+                    q.style.fontWeight = "600";
+                    return false;
+                } else if (!reg_p1.test(p)) {
+                    q.innerHTML =
+                        " * Password Should Contain Alphabets And numbers";
+                    q.style.color = "red";
+                    q.style.fontWeight = "600";
+                    return false;
+                } else {
+                    q.innerHTML = " * Valid Password";
+                    q.style.color = "green";
+                    q.style.fontWeight = "600";
+                    // return false;
+                }
+
+                // FOR CONFIRM-PASSWORD
+                let cp = document.getElementById("cpwd").value;
+                console.log(cp);
+                let cq = document.getElementById("cpwderr");
+
+                if (cp == "") {
+                    cq.innerHTML = " * Confirm Password Required";
+                    cq.style.color = "red";
+                    cq.style.fontWeight = "600";
+                    return false;
+                } else if (!(cp == p)) {
+                    cq.innerHTML = " * Password does not match";
+                    cq.style.color = "red";
+                    cq.style.fontWeight = "600";
+                    return false;
+                } else {
+                    cq.innerHTML = " * Password Accepted";
+                    cq.style.color = "green";
+                    cq.style.fontWeight = "600";
+                }
+            }
+        </script>
+    </body>
+</html>

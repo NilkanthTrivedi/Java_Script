@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="p1" />
+        <br />
+        <input type="text" id="inp" /><span>Choose Your Math Operator</span>
+        <br />
+        <input type="text" id="p2" />
+        <br />
+        <button onclick="getTotal()">Total =</button>
+        <p id="eql"></p>
+
+        <script>
+            function getTotal() {
+                var n1 = document.getElementById("p1").value;
+                var n2 = document.getElementById("p2").value;
+                var e = document.getElementById("eql");
+                // console.log(parseInt(n1) + parseInt(n2));
+                var ip = document.getElementById("inp").value;
+
+                if (ip == "+") {
+                    e.innerHTML = parseInt(n1) + parseInt(n2);
+                } else if (ip == "-") {
+                    e.innerHTML = parseInt(n1) - parseInt(n2);
+                } else if (ip == "*") {
+                    e.innerHTML = parseInt(n1) * parseInt(n2);
+                } else if (ip == "/") {
+                    e.innerHTML = parseInt(n1) / parseInt(n2);
+                } else {
+                    e.innerHTML = "Choose Valid operation";
+                }
+            }
+        </script>
+    </body>
+</html>

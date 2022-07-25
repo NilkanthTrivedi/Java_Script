@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>True Form</title>
+    </head>
+    <body>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" id="name" onblur="check()" /><span
+                            id="error"
+                        ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="text" id="pwd" onclick="check()" /><span
+                            id="error1"
+                        ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mobile No</td>
+                    <td>
+                        <input type="text" id="mbl" onclick="check()" />
+                        <span id="error2"></span>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <button onclick="check()">Submit</button>
+
+        <script>
+            function check() {
+                let n = document.getElementById("name").value;
+                let p = document.getElementById("pwd").value;
+                let m = document.getElementById("mbl").value;
+                let e = document.getElementById("error");
+                let e1 = document.getElementById("error1");
+                let e2 = document.getElementById("error2");
+                // console.log(n);
+                // console.log(p);
+                // console.log(m);
+
+                // NOw going for the condition for name;
+
+                if (n == "") {
+                    e.innerHTML = " *Enter Your Name";
+                    e.style.color = "red";
+                    document.getElementById("name").style.border =
+                        "3px solid red";
+                    return false;
+                } else {
+                    e.innerHTML = "";
+                    document.getElementById("name").style.border =
+                        "3px solid lightgreen";
+                }
+
+                let ex_n = /^[a-zA-Z]+$/;
+                if (!ex_n.test(n)) {
+                    alert("Letters Only");
+                    return false;
+                }
+                if (p == "") {
+                    e1.innerHTML = " *Enter Password";
+                    e1.style.color = "red";
+                    document.getElementById("pwd").style.border =
+                        "3px solid red";
+                    return false;
+                } else {
+                    e1.innerHTML = "";
+                    document.getElementById("pwd").style.border =
+                        "3px solid lightgreen";
+                }
+
+                let ex_p = /^[a-zA-Z]+[0-9]+$/;
+                if (!ex_p.test(p)) {
+                    alert("Password Must contain letters and numbers");
+                    return false;
+                }
+
+                if (m == "") {
+                    e2.innerHTML = " *Enter Mobile No";
+                    e2.style.color = "red";
+                    document.getElementById("mbl").style.border =
+                        "3px solid red";
+                } else {
+                    e2.innerHTML = "";
+                    document.getElementById("mbl").style.border =
+                        "3px solid lightgreen";
+                }
+                let ex_m = /^[0-9]+$/;
+                if (!ex_m.test(m)) {
+                    alert("Enter Mobile No");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
