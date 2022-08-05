@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guess My number</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                text-align: center;
+                padding: 100px;
+                background-color: lightblue;
+                color: black;
+                font-family: Bungee Inline;
+            }
+            .btn {
+                padding: 5px 40px;
+                font-size: 26px;
+                margin-top: 20px;
+                border-radius: 10px;
+                font-family: Bungee Inline;
+            }
+            .number {
+                width: 130px;
+                height: 100px;
+                font-size: 32px;
+                border-radius: 10px;
+                color: black;
+                background-color: white;
+                border: 2px solid white;
+                margin: auto;
+                margin-top: 20px;
+                text-align: center;
+                line-height: 100px;
+            }
+            main {
+                display: flex;
+                justify-content: center;
+                gap: 15%;
+            }
+            .right {
+                font-size: 20px;
+            }
+            .left input {
+                padding: 40px;
+                border-radius: 15px;
+                border: none;
+                border: 5px solid white;
+                font-size: 34px;
+                width: 250px;
+                height: 90px;
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Guess My Number</h1>
+            <p class="between">(Between 1 and 20)</p>
+            <button class="btn again">Again !</button>
+            <div class="number">?</div>
+        </header>
+
+        <main>
+            <section class="left">
+                <input type="number" class="guess" />
+                <button class="btn check">Check!</button>
+            </section>
+
+            <section class="right">
+                <p class="message">💭 Start guessing... 🤔</p>
+                <p class="label-score">
+                    💯 Score: <span class="score">20</span>
+                </p>
+                <p class="label-highscore">
+                    🥇 Highscore: <span class="highscore">0 </span>
+                </p>
+            </section>
+        </main>
+        <script src="game.js"></script>
+    </body>
+</html>
